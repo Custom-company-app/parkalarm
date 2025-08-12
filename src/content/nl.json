@@ -60,3 +60,82 @@
     "price": "0"
   }
 }
+{
+  "header": {
+    "nav": {
+      "features": "Functies",
+      "how": "Hoe het werkt",
+      "faq": "FAQ"
+    }
+  },
+  "badge": "Gratis in bèta",
+  "hero": {
+    "headline": "Geen parkeeerstress meer.",
+    "sub": "ParkAlarm waarschuwt je precies wanneer het telt. Activeer zones en activiteiten, verbind je auto/BT-apparaat en krijg slimme waarschuwingen zodat je geen risico op boetes loopt."
+  },
+  "cta": {
+    "primary": "Meld me aan",
+    "secondary": "Meer informatie"
+  },
+  "how": {
+    "subtitle": "In 4 eenvoudige stappen:",
+    "steps": [
+      { "title": "Creëer zones", "text": "Stel geofences in rond parkeergebieden of buurten.", "image": "/steps/step1.svg", "alt": "Stap 1 – stel zones in" },
+      { "title": "Verbind Bluetooth", "text": "Verbind je auto of een BT-beacon voor nauwkeurigheid.", "image": "/steps/step2.svg", "alt": "Stap 2 – verbind Bluetooth" },
+      { "title": "Kies activiteiten", "text": "Schakel parkeren, laden of werkmodus in – jij beslist.", "image": "/steps/step3.svg", "alt": "Stap 3 – kies activiteiten" },
+      { "title": "Ontvang waarschuwingen", "text": "Real-time meldingen wanneer nodig.", "image": "/steps/step4.svg", "alt": "Stap 4 – ontvang waarschuwingen" }
+    ]
+  },
+  "features": {
+    "items": [
+      { "icon": "🗺️", "title": "Zones", "text": "Geofences & activiteiten op maat voor jou." },
+      { "icon": "🔗", "title": "Bluetooth", "text": "Koppel met je auto of een beacon." },
+      { "icon": "⚡", "title": "Real-time waarschuwingen", "text": "Handel op het juiste moment." },
+      { "icon": "🔒", "title": "Privacy-first", "text": "Lokaal waar mogelijk, versleuteld waar nodig." },
+      { "icon": "✅", "title": "Eenvoudig", "text": "Activeer in enkele minuten." },
+      { "icon": "🕘", "title": "Geschiedenis", "text": "Overzicht van sessies en waarschuwingen." }
+    ]
+  },
+  "benefits": {
+    "oneLiner": "Minder boetes, meer zekerheid en tijd bespaard.",
+    "items": [
+      { "kicker": "Boete-vrij", "stat": "−90%", "text": "Aanzienlijke vermindering van boeterisico (indicatief)." },
+      { "kicker": "Tijd bespaard", "stat": "+12 min", "text": "Gemiddeld per parkeeractie." },
+      { "kicker": "Zekerheid", "stat": "24/7", "text": "Waarschuwingen wanneer nodig." }
+    ]
+  },
+  "social": {
+    "reviews": [
+      { "quote": "Eindelijk gemoedsrust tijdens het parkeren.", "author": "Sophie, Amsterdam" },
+      { "quote": "Bespaart ons bedrijf op boetes.", "author": "Jeroen, wagenparkbeheerder" },
+      { "quote": "Geweldig tijdens het laden, nooit vergeten.", "author": "Milan, EV-bestuurder" }
+    ]
+  },
+  "faq": {
+    "items": [
+      { "q": "Hoe werkt zonedetectie?", "a": "Met geofences en optionele Bluetooth herkent ParkAlarm wanneer je een zone binnenkomt of verlaat." },
+      { "q": "Werkt het offline?", "a": "Basisdetectie draait lokaal; je hebt internet nodig voor updates en synchronisatie." },
+      { "q": "Wat kost het?", "a": "ParkAlarm is gratis tijdens de bèta. Prijzen worden aangekondigd bij de lancering." },
+      { "q": "Hoe zit het met privacy?", "a": "We verzamelen zo min mogelijk data en versleutelen waar nodig. Jij blijft in controle." },
+      { "q": "Welke telefoons worden ondersteund?", "a": "iOS en Android met recente versies. Details volgen." },
+      { "q": "Kan ik later uitschrijven?", "a": "Ja, elk bericht bevat een uitschrijflink." }
+    ]
+  },
+  "contact": {
+    "title": "Neem contact met ons op",
+    "subtitle": "Heb je vragen of wil je meer weten over ParkAlarm? We horen graag van je!",
+    "form": {
+      "name": "Naam",
+      "email": "E-mailadres",
+      "subject": "Onderwerp",
+      "message": "Bericht",
+      "send": "Verstuur bericht",
+      "sending": "Bericht wordt verstuurd...",
+      "success": "Bedankt voor je bericht! We nemen zo spoedig mogelijk contact met je op.",
+      "error": "Er is iets misgegaan bij het versturen. Probeer het opnieuw."
+    }
+  },
+  "pricing": {
+    "price": "0"
+  }
+}

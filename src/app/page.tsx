@@ -5,7 +5,7 @@ import Features from "@/components/Features";
 import Benefits from "@/components/Benefits";
 import SocialProof from "@/components/SocialProof";
 import FAQ from "@/components/FAQ";
-import SignupForm from "@/components/SignupForm";
+import ContactForm from "@/components/SignupForm";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import { Toaster } from "@/components/ui/toaster";
@@ -51,7 +51,7 @@ export default async function Home() {
         <Benefits t={t} />
         <SocialProof t={t} />
         <FAQ t={t} />
-        <SignupForm t={t} />
+        <ContactForm t={t} />
       </main>
       <Footer t={t} />
       <CookieBanner />

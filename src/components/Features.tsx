@@ -1,3 +1,7 @@
+"use client";
+
+import React, { useEffect, useRef } from "react";
+
 type Feature = {
   icon: string;
   title: string;
@@ -5,14 +9,29 @@ type Feature = {
 };
 
 export default function Features({ t }: { t: any }) {
-  const features: Feature[] = t?.features?.items || [
-    { icon: "🗺️", title: "Smart Zones", text: "Automatische detectie van parkeergebieden" },
-    { icon: "🔔", title: "Realtime alerts", text: "Ontvang meldingen op het juiste moment" },
-    { icon: "🔒", title: "Privacy first", text: "Jouw data blijft bij jou" },
-    { icon: "⚡", title: "Batterij zuinig", text: "Minimaal impact op je telefoon" },
-    { icon: "📱", title: "Eenvoudig", text: "Werkt automatisch op de achtergrond" },
-    { icon: "🎯", title: "Nauwkeurig", text: "GPS en Bluetooth voor precisie" }
-  ];
+  const features: Feature[] = t?.features?.items || [];
+  const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  useEffect(() => {
+    const elems = itemRefs.current.filter(Boolean) as HTMLElement[];
+    if (!elems.length) return;
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target as HTMLElement;
+        if (entry.isIntersecting) {
+          const delay = el.getAttribute("data-delay") || "0ms";
+          el.style.animationDelay = delay;
+          el.classList.remove("opacity-0");
+          el.classList.add("animate-tilt-in");
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    elems.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, [features.length]);
 
   return (
     <section id="features" className="py-20 bg-gray-50">
@@ -22,15 +41,17 @@ export default function Features({ t }: { t: any }) {
             Waarom ParkAlarm?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ontwikkeld met de nieuwste technologie om parkeren zo makkelijk mogelijk te maken
+            De slimste manier om parkeeroverlast te voorkomen
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature: Feature, index: number) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
+            <div
+              key={index}
+              ref={(el) => (itemRefs.current[index] = el)}
+              data-delay={`${index * 80}ms`}
+              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 opacity-0 will-change-transform"
             >
               <div className="text-4xl mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">

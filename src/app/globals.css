@@ -175,6 +175,15 @@
 @layer base {
   * { @apply border-border outline-ring/50; }
   body { @apply bg-background text-foreground; }
+
+  /* Voorkom horizontaal scrollen op mobiel */
+  html, body { overflow-x: hidden; }
+
+  /* Zorg ervoor dat alle containers niet breder worden dan de viewport */
+  * { max-width: 100%; }
+
+  /* Fix voor elementen die buiten de container kunnen uitsteken */
+  .container { overflow-x: hidden; }
 }
 
 /* Base typografie (alleen wanneer geen Tailwind text-* ancestor) */
@@ -227,6 +236,44 @@ h1, h2, h3 {
 .btn-secondary { background-color: #ffffff; border: 1px solid var(--park); color: var(--park); }
 .btn-secondary:hover { background-color: color-mix(in srgb, var(--park) 8%, #ffffff); }
 
+/* Animations: reusable keyframes en helpers */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoom-in {
+  0% { opacity: 0; transform: scale(0.96) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes pop-in {
+  0% { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  70% { transform: translateY(2px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes tilt-in {
+  0% { opacity: 0; transform: rotateX(8deg) translateY(10px); transform-origin: center; }
+  100% { opacity: 1; transform: rotateX(0deg) translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Utility classes to apply animations (use style={{ animationDelay: '...' }} voor stagger) */
+.animate-fade-up { animation: fade-up 640ms cubic-bezier(.22,1,.36,1) both; will-change: transform, opacity; }
+.animate-zoom-in { animation: zoom-in 720ms cubic-bezier(.2, .9, .2, 1) both; will-change: transform, opacity; }
+.animate-pop-in { animation: pop-in 520ms cubic-bezier(.2, .8, .2, 1) both; will-change: transform, opacity; }
+.animate-tilt-in { animation: tilt-in 680ms cubic-bezier(.22,1,.36,1) both; will-change: transform, opacity; }
+.animate-float { animation: float 4200ms ease-in-out infinite; }
+
+/* kleine performance hint */
+.will-change-transform { will-change: transform, opacity; }
+
 /* Cards */
 .card {
   background: linear-gradient(180deg, #FFFFFF 0%, #F7FAFF 100%);
@@ -257,6 +304,18 @@ h1, h2, h3 {
   background-position: right -80px top -60px, left -80px bottom -80px;
   background-size: 520px auto, 380px auto;
 }
+
+/* Extra animaties */
+@keyframes floaty { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
+@keyframes floatx  { 0% { transform: translateX(0); } 50% { transform: translateX(6px); } 100% { transform: translateX(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.animate-floaty { animation: floaty 6s ease-in-out infinite; }
+.animate-floatx { animation: floatx 8s ease-in-out infinite; }
+.animate-fadeup { animation: fadeInUp 0.6s ease-out both; }
+
+/* Subtle decorative glow bij branding */
+.brand-glow { filter: drop-shadow(0 20px 40px rgba(0,0,0,.15)); }
 
 /* Pulse animatie (connected/zone) */
 @keyframes ring-pulse {

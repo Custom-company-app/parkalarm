@@ -1,4 +1,11 @@
 {
+  "header": {
+    "nav": {
+      "features": "Features",
+      "how": "How it works",
+      "faq": "FAQ"
+    }
+  },
   "badge": "Free in beta",
   "hero": {
     "headline": "No more parking stress.",

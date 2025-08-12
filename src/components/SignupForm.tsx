@@ -5,7 +5,6 @@ import { track } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 
 type Props = { t: any };
@@ -23,95 +22,120 @@ function genToken() {
   return Math.random().toString(36).slice(2);
 }
 
-export default function SignupForm({ t }: Props) {
+export default function ContactForm({ t }: Props) {
   const { toast } = useToast();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [useCase, setUseCase] = useState("stadsparkeren");
-  const [optIn, setOptIn] = useState(true);
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
-  const [csrf, setCsrf] = useState("");
-
-  useEffect(() => {
-    const fromCookie = document.cookie.split('; ').find(c => c.startsWith('pa_csrf='))?.split('=')[1];
-    if (fromCookie) setCsrf(fromCookie);
-    else {
-      const tkn = genToken();
-      document.cookie = `pa_csrf=${tkn}; path=/; SameSite=Lax`;
-      setCsrf(tkn);
-    }
-  }, []);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs: Record<string, string> = {};
+
+    if (!name.trim()) errs.name = "Naam is verplicht.";
     if (!isValidEmail(email)) errs.email = "Voer een geldig e-mailadres in.";
-    if (!optIn) errs.optIn = "Bevestig de opt-in voor updates.";
+    if (!subject.trim()) errs.subject = "Onderwerp is verplicht.";
+    if (!message.trim()) errs.message = "Bericht is verplicht.";
+
+    // Extra validatie
+    if (message.length < 10) errs.message = "Bericht moet minimaal 10 karakters lang zijn.";
+    if (message.length > 2000) errs.message = "Bericht mag maximaal 2000 karakters lang zijn.";
+
     setErrors(errs);
-    track("subscribe_attempt", { emailValid: !errs.email, optIn });
+    track("contact_attempt", { emailValid: !errs.email, hasSubject: !!subject, hasMessage: !!message });
 
     if (Object.keys(errs).length > 0) return;
 
     setLoading(true);
     try {
-      const res = await fetch("/api/subscribe", {
+      // Verstuur via Mailgun API route
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-csrf": csrf },
-        body: JSON.stringify({ email, firstName, useCase, optIn }),
+        headers: { 
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, subject, message }),
       });
+
       const data = await res.json();
       if (!res.ok) throw new Error(data?.message || "Er ging iets mis");
 
-      toast({ title: "Bedankt!", description: "Je staat op de lijst voor early access." });
-      track("subscribe_success", { source: "landing" });
+      toast({ 
+        title: "Bericht verzonden!", 
+        description: t?.contact?.form?.success || "We nemen zo spoedig mogelijk contact met je op." 
+      });
+      track("contact_success", { source: "contact_form" });
 
+      setName("");
       setEmail("");
-      setFirstName("");
-      setUseCase("stadsparkeren");
-      setOptIn(true);
+      setSubject("");
+      setMessage("");
     } catch (err: any) {
-      toast({ variant: "destructive", title: "Fout", description: err?.message || "Er is iets misgegaan." });
-      track("subscribe_error", { message: err?.message });
+      console.error('Contact form submission error:', err);
+
+      let errorMessage = err?.message || t?.contact?.form?.error || "Er is iets misgegaan.";
+
+      // Specifieke error messages voor verschillende scenario's
+      if (err?.message?.includes('Failed to fetch')) {
+        errorMessage = "Geen internetverbinding. Controleer je verbinding en probeer opnieuw.";
+      } else if (err?.message?.includes('429')) {
+        errorMessage = "Te veel verzoeken. Probeer het over een uur opnieuw.";
+      }
+
+      toast({ 
+        variant: "destructive", 
+        title: "Fout", 
+        description: errorMessage
+      });
+      track("contact_error", { 
+        message: err?.message,
+        type: err?.name || 'unknown'
+      });
     } finally {
       setLoading(false);
     }
   };
 
+
   return (
-      <section id="signup" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {t?.signup?.title || "Klaar om te beginnen?"}
+                {t?.contact?.title || "Neem contact met ons op"}
               </h2>
               <p className="text-xl text-gray-600">
-                {t?.signup?.subtitle || "Meld je aan voor early access en krijg als eerste toegang tot ParkAlarm"}
+                {t?.contact?.subtitle || "Heb je vragen of wil je meer weten over ParkAlarm? We horen graag van je!"}
               </p>
             </div>
 
             <form onSubmit={onSubmit} noValidate className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Label htmlFor="firstName" className="text-gray-700 font-medium">
-                    Voornaam
+                  <Label htmlFor="name" className="text-gray-700 font-medium">
+                    {t?.contact?.form?.name || "Naam"} *
                   </Label>
                   <Input 
-                    id="firstName" 
+                    id="name" 
                     type="text" 
-                    autoComplete="given-name" 
-                    value={firstName} 
-                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                    autoComplete="name" 
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)}
                     className="mt-2 h-12 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="Je voornaam"
+                    placeholder="Je volledige naam"
                   />
+                  {errors.name && <p className="mt-2 text-sm text-red-600">{errors.name}</p>}
                 </div>
 
                 <div>
                   <Label htmlFor="email" className="text-gray-700 font-medium">
-                    E-mailadres *
+                    {t?.contact?.form?.email || "E-mailadres"} *
                   </Label>
                   <Input 
                     id="email" 
@@ -128,35 +152,36 @@ export default function SignupForm({ t }: Props) {
               </div>
 
               <div>
-                <Label htmlFor="useCase" className="text-gray-700 font-medium">
-                  Waarvoor ga je ParkAlarm gebruiken?
+                <Label htmlFor="subject" className="text-gray-700 font-medium">
+                  {t?.contact?.form?.subject || "Onderwerp"} *
                 </Label>
-                <Select onValueChange={setUseCase} value={useCase}>
-                  <SelectTrigger id="useCase" className="mt-2 h-12 rounded-lg border-gray-200">
-                    <SelectValue placeholder="Kies je situatie..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="stadsparkeren">Stadsparkeren</SelectItem>
-                    <SelectItem value="ev-laden">Elektrisch rijden & laden</SelectItem>
-                    <SelectItem value="werk-zaak">Werk & zakelijk</SelectItem>
-                    <SelectItem value="anders">Anders</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Input 
+                  id="subject" 
+                  type="text" 
+                  required
+                  value={subject} 
+                  onChange={(e) => setSubject(e.target.value)}
+                  className="mt-2 h-12 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Waar gaat je bericht over?"
+                />
+                {errors.subject && <p className="mt-2 text-sm text-red-600">{errors.subject}</p>}
               </div>
 
-              <div className="flex items-start gap-3">
-                <input 
-                  type="checkbox" 
-                  checked={optIn} 
-                  onChange={(e) => setOptIn(e.target.checked)}
-                  className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-0.5"
+              <div>
+                <Label htmlFor="message" className="text-gray-700 font-medium">
+                  {t?.contact?.form?.message || "Bericht"} *
+                </Label>
+                <textarea 
+                  id="message" 
+                  required
+                  rows={5}
+                  value={message} 
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="mt-2 w-full px-3 py-2 border border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 resize-vertical"
+                  placeholder="Vertel ons wat je wilt weten of delen..."
                 />
-                <label className="text-gray-600 text-sm leading-relaxed">
-                  Ik wil op de hoogte blijven van updates en nieuws over ParkAlarm. 
-                  Je kunt je altijd uitschrijven.
-                </label>
+                {errors.message && <p className="mt-2 text-sm text-red-600">{errors.message}</p>}
               </div>
-              {errors.optIn && <p className="text-sm text-red-600">{errors.optIn}</p>}
 
               <Button 
                 type="submit" 
@@ -166,17 +191,15 @@ export default function SignupForm({ t }: Props) {
                 {loading ? (
                   <span className="flex items-center gap-2">
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    Bezig met aanmelden...
+                    {t?.contact?.form?.sending || "Bericht wordt verstuurd..."}
                   </span>
                 ) : (
-                  t?.cta?.primary || "Ja, ik wil early access!"
+                  t?.contact?.form?.send || "Verstuur bericht"
                 )}
               </Button>
 
               <p className="text-center text-sm text-gray-500">
-                Door aan te melden ga je akkoord met onze{" "}
-                <a href="/terms" className="text-blue-600 hover:underline">voorwaarden</a>
-                {" "}en{" "}
+                Door dit formulier te gebruiken ga je akkoord met onze{" "}
                 <a href="/privacy" className="text-blue-600 hover:underline">privacybeleid</a>
               </p>
             </form>
