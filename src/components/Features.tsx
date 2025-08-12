@@ -49,7 +49,7 @@ export default function Features({ t }: { t: any }) {
           {features.map((feature: Feature, index: number) => (
             <div
               key={index}
-              ref={(el) => (itemRefs.current[index] = el)}
+              ref={(el) => { itemRefs.current[index] = el; }}
               data-delay={`${index * 80}ms`}
               className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 opacity-0 will-change-transform"
             >

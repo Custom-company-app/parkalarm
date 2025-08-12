@@ -51,7 +51,7 @@ export default function HowItWorks({ t }: { t: any }) {
           {steps.map((step: Step, index: number) => (
             <div
               key={index}
-              ref={(el) => (itemRefs.current[index] = el)}
+              ref={(el) => { itemRefs.current[index] = el; }}
               data-delay={`${index * 120}ms`}
               className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center opacity-0 will-change-transform"
             >

@@ -6,7 +6,10 @@ type EventName =
   | "subscribe_attempt"
   | "subscribe_success"
   | "subscribe_error"
-  | "faq_open";
+  | "faq_open"
+  | "contact_attempt"
+  | "contact_success"
+  | "contact_error";
 
 export function track(name: EventName, params: Record<string, any> = {}) {
   try {
