@@ -1,7 +1,14 @@
 import Image from "next/image";
 
+type Step = {
+  title: string;
+  text: string;
+  image: string;
+  alt: string;
+};
+
 export default function HowItWorks({ t }: { t: any }) {
-  const steps = t?.how?.steps || [];
+  const steps: Step[] = t?.how?.steps || [];
 
   return (
     <section id="how-it-works" className="py-20 bg-gray-50/50">
@@ -16,7 +23,7 @@ export default function HowItWorks({ t }: { t: any }) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
+          {steps.map((step: Step, index: number) => (
             <div key={index} className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center">
               <div className="mb-6 w-full h-80 relative">
                 <Image 

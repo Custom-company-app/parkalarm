@@ -1,5 +1,11 @@
+type Feature = {
+  icon: string;
+  title: string;
+  text: string;
+};
+
 export default function Features({ t }: { t: any }) {
-  const features = t?.features?.items || [
+  const features: Feature[] = t?.features?.items || [
     { icon: "🗺️", title: "Smart Zones", text: "Automatische detectie van parkeergebieden" },
     { icon: "🔔", title: "Realtime alerts", text: "Ontvang meldingen op het juiste moment" },
     { icon: "🔒", title: "Privacy first", text: "Jouw data blijft bij jou" },
@@ -21,7 +27,7 @@ export default function Features({ t }: { t: any }) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+          {features.map((feature: Feature, index: number) => (
             <div 
               key={index} 
               className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100"
