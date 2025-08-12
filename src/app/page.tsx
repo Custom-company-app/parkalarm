@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import { Toaster } from "@/components/ui/toaster";
 import { getContent } from "@/lib/i18n";
-import { Script } from "next/script";
+import Script from "next/script";
 
 export default async function Home() {
   const t = await getContent("nl");
