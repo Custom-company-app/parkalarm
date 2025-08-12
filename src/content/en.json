@@ -1,0 +1,62 @@
+{
+  "badge": "Free in beta",
+  "hero": {
+    "headline": "No more parking stress.",
+    "sub": "ParkAlarm warns you exactly when it matters. Enable zones and activities, connect your car/BT device, and get smart alerts so you won't risk fines."
+  },
+  "cta": {
+    "primary": "Sign me up",
+    "secondary": "Learn more"
+  },
+  "how": {
+    "subtitle": "In 4 simple steps:",
+    "steps": [
+      { "title": "Create zones", "text": "Set up geofences around parking areas or neighborhoods.", "image": "/steps/step1.svg", "alt": "Step 1 – set zones" },
+      { "title": "Connect Bluetooth", "text": "Connect your car or a BT beacon for accuracy.", "image": "/steps/step2.svg", "alt": "Step 2 – connect Bluetooth" },
+      { "title": "Choose activities", "text": "Enable parking, charging, or work mode – you decide.", "image": "/steps/step3.svg", "alt": "Step 3 – choose activities" },
+      { "title": "Get alerts", "text": "Real-time notifications when needed.", "image": "/steps/step4.svg", "alt": "Step 4 – receive alerts" }
+    ]
+  },
+  "features": {
+    "items": [
+      { "icon": "🗺️", "title": "Zones", "text": "Geofences & activities tailored to you." },
+      { "icon": "🔗", "title": "Bluetooth", "text": "Pair with your car or a beacon." },
+      { "icon": "⚡", "title": "Real-time alerts", "text": "Act at the right moment." },
+      { "icon": "🔒", "title": "Privacy-first", "text": "Local where possible, encrypted where needed." },
+      { "icon": "✅", "title": "Easy", "text": "Activate in minutes." },
+      { "icon": "🕘", "title": "History", "text": "Overview of sessions and alerts." }
+    ]
+  },
+  "benefits": {
+    "oneLiner": "Fewer fines, more certainty and time saved.",
+    "items": [
+      { "kicker": "Fine-free", "stat": "−90%", "text": "Significant reduction in fine risk (indicative)." },
+      { "kicker": "Time saved", "stat": "+12 min", "text": "On average per parking action." },
+      { "kicker": "Certainty", "stat": "24/7", "text": "Warnings when needed." }
+    ]
+  },
+  "social": {
+    "reviews": [
+      { "quote": "Finally peace of mind while parking.", "author": "Sophie, Amsterdam" },
+      { "quote": "Saves our company on fines.", "author": "Jeroen, fleet manager" },
+      { "quote": "Great when charging, never forget.", "author": "Milan, EV driver" }
+    ]
+  },
+  "faq": {
+    "items": [
+      { "q": "How does zone detection work?", "a": "With geofences and optional Bluetooth, ParkAlarm recognizes when you arrive in or leave a zone." },
+      { "q": "Does it work offline?", "a": "Basic detection runs locally; you’ll need internet for updates and sync." },
+      { "q": "How much does it cost?", "a": "ParkAlarm is free during beta. Pricing will be announced at launch." },
+      { "q": "What about privacy?", "a": "We collect as little data as possible and encrypt where needed. You stay in control." },
+      { "q": "Which phones are supported?", "a": "iOS and Android with recent versions. Details to follow." },
+      { "q": "Can I unsubscribe later?", "a": "Yes, every message contains an unsubscribe link." }
+    ]
+  },
+  "signup": {
+    "title": "Join the early access",
+    "subtitle": "Be the first to get access and updates by email."
+  },
+  "pricing": {
+    "price": "0"
+  }
+}
