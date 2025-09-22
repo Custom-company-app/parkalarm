@@ -26,7 +26,7 @@ export default function Hero({ t }: { t: any }) {
               className={`inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium ${leftInView ? "animate-fade-up" : "opacity-0"}`}
               style={{ animationDelay: "0ms" }}
             >
-              🚗 Beta beschikbaar
+              {t?.hero?.badge || "🚗 Beta beschikbaar"}
             </div>
 
             <div className="space-y-6">
@@ -50,11 +50,11 @@ export default function Hero({ t }: { t: any }) {
               style={{ animationDelay: "240ms" }}
             >
               <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg" onClick={() => track("cta_click", { cta: "primary_hero" })}>
-                <Link href="#contact">Neem contact op</Link>
+                <Link href="#contact">{t?.hero?.cta?.primary || "Neem contact op"}</Link>
               </Button>
 
               <Button asChild variant="outline" size="lg" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg" onClick={() => track("cta_click", { cta: "secondary_hero" })}>
-                <Link href="#how-it-works">Hoe het werkt</Link>
+                <Link href="#how-it-works">{t?.hero?.cta?.secondary || "Hoe het werkt"}</Link>
               </Button>
             </div>
 
@@ -64,11 +64,11 @@ export default function Hero({ t }: { t: any }) {
             >
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                Geen creditcard vereist
+                {t?.hero?.features?.creditcard || "Geen creditcard vereist"}
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                14 dagen gratis
+                {t?.hero?.features?.trial || "14 dagen gratis"}
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function Hero({ t }: { t: any }) {
               >
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-xs font-medium text-gray-900">Zone actief</span>
+                  <span className="text-xs font-medium text-gray-900">{t?.contact?.form?.notification || "Zone actief"}</span>
                 </div>
               </div>
             </div>

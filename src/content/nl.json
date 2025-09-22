@@ -4,18 +4,37 @@
       "features": "Functies",
       "how": "Hoe het werkt",
       "faq": "FAQ"
-    }
+    },
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "Alle rechten voorbehouden.",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "cookies": "Cookies",
+    "press": "Pers",
+    "english": "English"
   },
   "badge": "Gratis in bèta",
   "hero": {
-    "headline": "Geen parkeeerstress meer.",
-    "sub": "ParkAlarm waarschuwt je precies wanneer het telt. Activeer zones en activiteiten, verbind je auto/BT-apparaat en krijg slimme waarschuwingen zodat je geen risico op boetes loopt."
+    "headline": "Geen parkeerstress meer.",
+    "sub": "ParkAlarm waarschuwt je precies wanneer het telt. Activeer zones en activiteiten, verbind je auto/BT-apparaat en krijg slimme waarschuwingen zodat je geen risico op boetes loopt.",
+    "badge": "🚗 Beta beschikbaar",
+    "cta": {
+      "primary": "Neem contact op",
+      "secondary": "Hoe het werkt"
+    },
+    "features": {
+      "creditcard": "Geen creditcard vereist",
+      "trial": "14 dagen gratis"
+    }
   },
   "cta": {
     "primary": "Meld me aan",
     "secondary": "Meer informatie"
   },
   "how": {
+    "title": "Hoe het werkt",
     "subtitle": "In 4 eenvoudige stappen:",
     "steps": [
       { "title": "Creëer zones", "text": "Stel geofences in rond parkeergebieden of buurten.", "image": "/steps/step1.svg", "alt": "Stap 1 – stel zones in" },
@@ -25,6 +44,8 @@
     ]
   },
   "features": {
+    "title": "Waarom ParkAlarm?",
+    "subtitle": "De slimste manier om parkeeroverlast te voorkomen",
     "items": [
       { "icon": "🗺️", "title": "Zones", "text": "Geofences & activiteiten op maat voor jou." },
       { "icon": "🔗", "title": "Bluetooth", "text": "Koppel met je auto of een beacon." },
@@ -43,6 +64,7 @@
     ]
   },
   "social": {
+    "title": "Wat anderen zeggen",
     "reviews": [
       { "quote": "Eindelijk gemoedsrust tijdens het parkeren.", "author": "Sophie, Amsterdam" },
       { "quote": "Bespaart ons bedrijf op boetes.", "author": "Jeroen, wagenparkbeheerder" },
@@ -50,6 +72,7 @@
     ]
   },
   "faq": {
+    "title": "Veelgestelde vragen",
     "items": [
       { "q": "Hoe werkt zonedetectie?", "a": "Met geofences en optionele Bluetooth herkent ParkAlarm wanneer je een zone binnenkomt of verlaat." },
       { "q": "Werkt het offline?", "a": "Basisdetectie draait lokaal; je hebt internet nodig voor updates en synchronisatie." },
@@ -70,7 +93,34 @@
       "send": "Verstuur bericht",
       "sending": "Bericht wordt verstuurd...",
       "success": "Bedankt voor je bericht! We nemen zo spoedig mogelijk contact met je op.",
-      "error": "Er is iets misgegaan bij het versturen. Probeer het opnieuw."
+      "error": "Er is iets misgegaan bij het versturen. Probeer het opnieuw.",
+      "placeholders": {
+        "name": "Je volledige naam",
+        "email": "je@email.com",
+        "subject": "Waar gaat je bericht over?",
+        "message": "Vertel ons wat je wilt weten of delen..."
+      },
+      "validation": {
+        "nameRequired": "Naam is verplicht.",
+        "emailInvalid": "Voer een geldig e-mailadres in.",
+        "subjectRequired": "Onderwerp is verplicht.",
+        "messageRequired": "Bericht is verplicht.",
+        "messageTooShort": "Bericht moet minimaal 10 karakters lang zijn.",
+        "messageTooLong": "Bericht mag maximaal 2000 karakters lang zijn."
+      },
+      "errors": {
+        "noConnection": "Geen internetverbinding. Controleer je verbinding en probeer opnieuw.",
+        "tooManyRequests": "Te veel verzoeken. Probeer het over een uur opnieuw.",
+        "general": "Er is iets misgegaan.",
+        "title": "Fout"
+      },
+      "privacy": "Door dit formulier te gebruiken ga je akkoord met onze",
+      "privacyLink": "privacybeleid",
+      "toast": {
+        "title": "Bericht verzonden!",
+        "description": "We nemen zo spoedig mogelijk contact met je op."
+      },
+      "notification": "Zone actief"
     }
   },
   "pricing": {

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
 type Step = {
@@ -25,7 +24,6 @@ export default function HowItWorks({ t }: { t: any }) {
           const delay = el.getAttribute("data-delay") || "0ms";
           el.style.animationDelay = delay;
           el.classList.remove("opacity-0");
-          el.classList.add("animate-fade-up");
           obs.unobserve(el);
         }
       });
@@ -36,11 +34,11 @@ export default function HowItWorks({ t }: { t: any }) {
   }, [steps.length]);
 
   return (
-    <section id="how-it-works" className="py-20 bg-gray-50/50">
+    <section id="how-it-works" className="py-20 bg-gray-50/50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Hoe het werkt
+            {t?.how?.title || "Hoe het werkt"}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             {t?.how?.subtitle}
@@ -55,14 +53,29 @@ export default function HowItWorks({ t }: { t: any }) {
               data-delay={`${index * 120}ms`}
               className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center opacity-0 will-change-transform"
             >
-              <div className="mb-6 w-full h-80 relative">
-                <Image
-                  src={step.image}
-                  alt={step.alt}
-                  fill
-                  style={{ objectFit: "contain" }}
-                  className="rounded-lg"
-                />
+              <div className="mb-6 w-20 h-20 mx-auto flex items-center justify-center bg-blue-50 rounded-2xl">
+                {index === 0 && (
+                  <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                )}
+                {index === 1 && (
+                  <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                  </svg>
+                )}
+                {index === 2 && (
+                  <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                  </svg>
+                )}
+                {index === 3 && (
+                  <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.73 21a2 2 0 01-3.46 0" />
+                  </svg>
+                )}
               </div>
               <div className="w-10 h-10 flex items-center justify-center bg-blue-600 text-white font-bold rounded-full mb-4">
                 {index + 1}

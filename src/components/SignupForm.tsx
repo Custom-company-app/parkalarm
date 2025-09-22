@@ -35,14 +35,14 @@ export default function ContactForm({ t }: Props) {
     e.preventDefault();
     const errs: Record<string, string> = {};
 
-    if (!name.trim()) errs.name = "Naam is verplicht.";
-    if (!isValidEmail(email)) errs.email = "Voer een geldig e-mailadres in.";
-    if (!subject.trim()) errs.subject = "Onderwerp is verplicht.";
-    if (!message.trim()) errs.message = "Bericht is verplicht.";
+    if (!name.trim()) errs.name = t?.contact?.form?.validation?.nameRequired || "Naam is verplicht.";
+    if (!isValidEmail(email)) errs.email = t?.contact?.form?.validation?.emailInvalid || "Voer een geldig e-mailadres in.";
+    if (!subject.trim()) errs.subject = t?.contact?.form?.validation?.subjectRequired || "Onderwerp is verplicht.";
+    if (!message.trim()) errs.message = t?.contact?.form?.validation?.messageRequired || "Bericht is verplicht.";
 
     // Extra validatie
-    if (message.length < 10) errs.message = "Bericht moet minimaal 10 karakters lang zijn.";
-    if (message.length > 2000) errs.message = "Bericht mag maximaal 2000 karakters lang zijn.";
+    if (message.length < 10) errs.message = t?.contact?.form?.validation?.messageTooShort || "Bericht moet minimaal 10 karakters lang zijn.";
+    if (message.length > 2000) errs.message = t?.contact?.form?.validation?.messageTooLong || "Bericht mag maximaal 2000 karakters lang zijn.";
 
     setErrors(errs);
     track("contact_attempt", { emailValid: !errs.email, hasSubject: !!subject, hasMessage: !!message });
@@ -61,11 +61,11 @@ export default function ContactForm({ t }: Props) {
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data?.message || "Er ging iets mis");
+      if (!res.ok) throw new Error(data?.message || t?.contact?.form?.errors?.general || "Er ging iets mis");
 
       toast({ 
-        title: "Bericht verzonden!", 
-        description: t?.contact?.form?.success || "We nemen zo spoedig mogelijk contact met je op." 
+        title: t?.contact?.form?.toast?.title || "Bericht verzonden!", 
+        description: t?.contact?.form?.toast?.description || "We nemen zo spoedig mogelijk contact met je op." 
       });
       track("contact_success", { source: "contact_form" });
 
@@ -76,18 +76,18 @@ export default function ContactForm({ t }: Props) {
     } catch (err: any) {
       console.error('Contact form submission error:', err);
 
-      let errorMessage = err?.message || t?.contact?.form?.error || "Er is iets misgegaan.";
+      let errorMessage = err?.message || t?.contact?.form?.error || t?.contact?.form?.errors?.general || "Er is iets misgegaan.";
 
       // Specifieke error messages voor verschillende scenario's
       if (err?.message?.includes('Failed to fetch')) {
-        errorMessage = "Geen internetverbinding. Controleer je verbinding en probeer opnieuw.";
+        errorMessage = t?.contact?.form?.errors?.noConnection || "Geen internetverbinding. Controleer je verbinding en probeer opnieuw.";
       } else if (err?.message?.includes('429')) {
-        errorMessage = "Te veel verzoeken. Probeer het over een uur opnieuw.";
+        errorMessage = t?.contact?.form?.errors?.tooManyRequests || "Te veel verzoeken. Probeer het over een uur opnieuw.";
       }
 
       toast({ 
         variant: "destructive", 
-        title: "Fout", 
+        title: t?.contact?.form?.errors?.title || "Fout", 
         description: errorMessage
       });
       track("contact_error", { 
@@ -128,7 +128,7 @@ export default function ContactForm({ t }: Props) {
                     value={name} 
                     onChange={(e) => setName(e.target.value)}
                     className="mt-2 h-12 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="Je volledige naam"
+                    placeholder={t?.contact?.form?.placeholders?.name || "Je volledige naam"}
                   />
                   {errors.name && <p className="mt-2 text-sm text-red-600">{errors.name}</p>}
                 </div>
@@ -145,7 +145,7 @@ export default function ContactForm({ t }: Props) {
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)}
                     className="mt-2 h-12 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                    placeholder="je@email.com"
+                    placeholder={t?.contact?.form?.placeholders?.email || "je@email.com"}
                   />
                   {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email}</p>}
                 </div>
@@ -162,7 +162,7 @@ export default function ContactForm({ t }: Props) {
                   value={subject} 
                   onChange={(e) => setSubject(e.target.value)}
                   className="mt-2 h-12 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                  placeholder="Waar gaat je bericht over?"
+                  placeholder={t?.contact?.form?.placeholders?.subject || "Waar gaat je bericht over?"}
                 />
                 {errors.subject && <p className="mt-2 text-sm text-red-600">{errors.subject}</p>}
               </div>
@@ -178,7 +178,7 @@ export default function ContactForm({ t }: Props) {
                   value={message} 
                   onChange={(e) => setMessage(e.target.value)}
                   className="mt-2 w-full px-3 py-2 border border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 resize-vertical"
-                  placeholder="Vertel ons wat je wilt weten of delen..."
+                  placeholder={t?.contact?.form?.placeholders?.message || "Vertel ons wat je wilt weten of delen..."}
                 />
                 {errors.message && <p className="mt-2 text-sm text-red-600">{errors.message}</p>}
               </div>
@@ -199,8 +199,8 @@ export default function ContactForm({ t }: Props) {
               </Button>
 
               <p className="text-center text-sm text-gray-500">
-                Door dit formulier te gebruiken ga je akkoord met onze{" "}
-                <a href="/privacy" className="text-blue-600 hover:underline">privacybeleid</a>
+                {t?.contact?.form?.privacy || "Door dit formulier te gebruiken ga je akkoord met onze"}{" "}
+                <a href="/privacy" className="text-blue-600 hover:underline">{t?.contact?.form?.privacyLink || "privacybeleid"}</a>
               </p>
             </form>
           </div>

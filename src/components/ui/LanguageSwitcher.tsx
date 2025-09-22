@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const NlFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 5 3" className="rounded-sm flex-shrink-0">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 5 3" className="rounded-sm flex-shrink-0">
     <rect width="5" height="3" fill="#21468B"/>
     <rect width="5" height="2" fill="#FFFFFF"/>
     <rect width="5" height="1" fill="#AE1C28"/>
@@ -13,7 +13,7 @@ const NlFlag = () => (
 );
 
 const EnFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 60 30" className="rounded-sm flex-shrink-0">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 60 30" className="rounded-sm flex-shrink-0">
     <clipPath id="a"><path d="M0 0v30h60V0z"/></clipPath>
     <path d="M0 0v30h60V0z" fill="#012169"/>
     <path d="M0 0l60 30m0-30L0 30" stroke="#fff" strokeWidth="6" clipPath="url(#a)"/>

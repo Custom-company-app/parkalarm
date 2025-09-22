@@ -15,9 +15,9 @@ export default function Header({ t }: Props) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { href: "#features", label: "Functies" },
-    { href: "#how-it-works", label: "Hoe het werkt" },
-    { href: "#faq", label: "FAQ" }
+    { href: "#features", label: t.header.nav.features },
+    { href: "#how-it-works", label: t.header.nav.how },
+    { href: "#faq", label: t.header.nav.faq }
   ];
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export default function Header({ t }: Props) {
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg"
               onClick={() => track("cta_click", { cta: "header_contact" })}
             >
-              <a href="#contact">Contact</a>
+              <a href="#contact">{t.header.contact}</a>
             </Button>
           </div>
         </div>

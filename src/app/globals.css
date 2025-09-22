@@ -179,11 +179,31 @@
   /* Voorkom horizontaal scrollen op mobiel */
   html, body { overflow-x: hidden; }
 
+  /* Voorkom onnodige scrollbars bij laden van pagina */
+  html { 
+    overflow-x: hidden;
+    overflow-y: auto; /* Alleen verticaal scrollen wanneer nodig */
+  }
+  
+  body {
+    overflow-x: hidden;
+    overflow-y: auto; /* Voorkom scrollbars door animaties */
+    min-height: 100vh; /* Zorg voor minimale hoogte */
+  }
+
   /* Zorg ervoor dat alle containers niet breder worden dan de viewport */
   * { max-width: 100%; }
 
   /* Fix voor elementen die buiten de container kunnen uitsteken */
   .container { overflow-x: hidden; }
+  
+  /* Voorkom scrollbars tijdens animaties door alle secties en main overflow te controleren */
+  main, section { overflow-x: hidden; }
+  
+  /* Specifieke fix voor animatie-elementen die buiten bounds kunnen gaan tijdens laden */
+  .animate-fade-up, .animate-zoom-in, .animate-pop-in, .animate-tilt-in, .animate-fadeup {
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
 }
 
 /* Base typografie (alleen wanneer geen Tailwind text-* ancestor) */

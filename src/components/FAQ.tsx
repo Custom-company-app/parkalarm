@@ -18,7 +18,7 @@ export default function FAQ({ t }: { t: any }) {
     <section id="faq" className="py-16 sm:py-24">
       <div className="container max-w-3xl">
         <div className="text-center">
-          <h2 className="text-3xl font-semibold tracking-tight">Veelgestelde vragen</h2>
+          <h2 className="text-3xl font-semibold tracking-tight">{t?.faq?.title || "Veelgestelde vragen"}</h2>
         </div>
         <Accordion type="single" collapsible className="w-full mt-8">
           {t.faq.items.map((item: any, i: number) => (

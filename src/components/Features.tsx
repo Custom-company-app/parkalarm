@@ -23,7 +23,6 @@ export default function Features({ t }: { t: any }) {
           const delay = el.getAttribute("data-delay") || "0ms";
           el.style.animationDelay = delay;
           el.classList.remove("opacity-0");
-          el.classList.add("animate-tilt-in");
           obs.unobserve(el);
         }
       });
@@ -38,10 +37,10 @@ export default function Features({ t }: { t: any }) {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Waarom ParkAlarm?
+            {t?.features?.title || "Waarom ParkAlarm?"}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            De slimste manier om parkeeroverlast te voorkomen
+            {t?.features?.subtitle || "De slimste manier om parkeeroverlast te voorkomen"}
           </p>
         </div>
 

@@ -4,18 +4,37 @@
       "features": "Features",
       "how": "How it works",
       "faq": "FAQ"
-    }
+    },
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "press": "Press",
+    "dutch": "Dutch"
   },
   "badge": "Free in beta",
   "hero": {
     "headline": "No more parking stress.",
-    "sub": "ParkAlarm warns you exactly when it matters. Enable zones and activities, connect your car/BT device, and get smart alerts so you won't risk fines."
+    "sub": "ParkAlarm warns you exactly when it matters. Enable zones and activities, connect your car/BT device, and get smart alerts so you won't risk fines.",
+    "badge": "🚗 Beta available",
+    "cta": {
+      "primary": "Contact us",
+      "secondary": "How it works"
+    },
+    "features": {
+      "creditcard": "No credit card required",
+      "trial": "14 days free"
+    }
   },
   "cta": {
     "primary": "Sign me up",
     "secondary": "Learn more"
   },
   "how": {
+    "title": "How it works",
     "subtitle": "In 4 simple steps:",
     "steps": [
       { "title": "Create zones", "text": "Set up geofences around parking areas or neighborhoods.", "image": "/steps/step1.svg", "alt": "Step 1 – set zones" },
@@ -25,6 +44,8 @@
     ]
   },
   "features": {
+    "title": "Why ParkAlarm?",
+    "subtitle": "The smartest way to prevent parking troubles",
     "items": [
       { "icon": "🗺️", "title": "Zones", "text": "Geofences & activities tailored to you." },
       { "icon": "🔗", "title": "Bluetooth", "text": "Pair with your car or a beacon." },
@@ -43,6 +64,7 @@
     ]
   },
   "social": {
+    "title": "What others say",
     "reviews": [
       { "quote": "Finally peace of mind while parking.", "author": "Sophie, Amsterdam" },
       { "quote": "Saves our company on fines.", "author": "Jeroen, fleet manager" },
@@ -50,6 +72,7 @@
     ]
   },
   "faq": {
+    "title": "Frequently asked questions",
     "items": [
       { "q": "How does zone detection work?", "a": "With geofences and optional Bluetooth, ParkAlarm recognizes when you arrive in or leave a zone." },
       { "q": "Does it work offline?", "a": "Basic detection runs locally; you’ll need internet for updates and sync." },
@@ -59,9 +82,46 @@
       { "q": "Can I unsubscribe later?", "a": "Yes, every message contains an unsubscribe link." }
     ]
   },
-  "signup": {
-    "title": "Join the early access",
-    "subtitle": "Be the first to get access and updates by email."
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Have questions or want to know more about ParkAlarm? We'd love to hear from you!",
+    "form": {
+      "name": "Name",
+      "email": "Email address",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send message",
+      "sending": "Sending message...",
+      "success": "Thank you for your message! We'll get back to you as soon as possible.",
+      "error": "Something went wrong sending your message. Please try again.",
+      "placeholders": {
+        "name": "Your full name",
+        "email": "you@email.com",
+        "subject": "What is your message about?",
+        "message": "Tell us what you want to know or share..."
+      },
+      "validation": {
+        "nameRequired": "Name is required.",
+        "emailInvalid": "Please enter a valid email address.",
+        "subjectRequired": "Subject is required.",
+        "messageRequired": "Message is required.",
+        "messageTooShort": "Message must be at least 10 characters long.",
+        "messageTooLong": "Message must be no more than 2000 characters long."
+      },
+      "errors": {
+        "noConnection": "No internet connection. Check your connection and try again.",
+        "tooManyRequests": "Too many requests. Please try again in an hour.",
+        "general": "Something went wrong.",
+        "title": "Error"
+      },
+      "privacy": "By using this form you agree to our",
+      "privacyLink": "privacy policy",
+      "toast": {
+        "title": "Message sent!",
+        "description": "We'll get back to you as soon as possible."
+      },
+      "notification": "Zone active"
+    }
   },
   "pricing": {
     "price": "0"
