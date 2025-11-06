@@ -17,8 +17,8 @@
   },
   "badge": "Gratis in bèta",
   "hero": {
-    "headline": "Geen parkeerstress meer.",
-    "sub": "ParkAlarm waarschuwt je precies wanneer het telt. Activeer zones en activiteiten, verbind je auto/BT-apparaat en krijg slimme waarschuwingen zodat je geen risico op boetes loopt.",
+    "headline": "Geen onnodige parkeerkosten meer.",
+    "sub": "ParkAlarm waarschuwt je precies wanneer het telt. Activeer zones en activiteiten, verbind je auto/BT-apparaat en krijg slimme waarschuwingen zodat je geen risico op boetes loopt of teveel betaalt omdat de parkeerkosten na vertrek van de parkeerplaats blijven doorlopen.",
     "badge": "🚗 Beta beschikbaar",
     "cta": {
       "primary": "Neem contact op",
@@ -37,20 +37,20 @@
     "title": "Hoe het werkt",
     "subtitle": "In 4 eenvoudige stappen:",
     "steps": [
-      { "title": "Creëer zones", "text": "Stel geofences in rond parkeergebieden of buurten.", "image": "/steps/step1.svg", "alt": "Stap 1 – stel zones in" },
+      { "title": "Alarm Vrije Zones", "text": "Stel zogenaamde Alarm Vrije Zones in op de kaart waar je geen alarmen wil ontvangen.", "image": "/steps/step1.svg", "alt": "Stap 1 – stel zones in" },
       { "title": "Verbind Bluetooth", "text": "Verbind je auto of een BT-beacon voor nauwkeurigheid.", "image": "/steps/step2.svg", "alt": "Stap 2 – verbind Bluetooth" },
-      { "title": "Kies activiteiten", "text": "Schakel parkeren, laden of werkmodus in – jij beslist.", "image": "/steps/step3.svg", "alt": "Stap 3 – kies activiteiten" },
+      { "title": "Stel de Alarm Vrije Zones in", "text": "Stel de Alarm Vrije Zones in waar u geen alarm wil ontvangen.", "image": "/steps/step3.svg", "alt": "Stap 3 – kies activiteiten" },
       { "title": "Ontvang waarschuwingen", "text": "Real-time meldingen wanneer nodig.", "image": "/steps/step4.svg", "alt": "Stap 4 – ontvang waarschuwingen" }
     ]
   },
   "features": {
     "title": "Waarom ParkAlarm?",
-    "subtitle": "De slimste manier om parkeeroverlast te voorkomen",
+    "subtitle": "De slimste manier om parkeerboetes te voorkomen en tijd te besparen.",
     "items": [
-      { "icon": "🗺️", "title": "Zones", "text": "Geofences & activiteiten op maat voor jou." },
+      { "icon": "🗺️", "title": "Alarm Vrije Zones", "text": "Stel Alarm Vrije Zones in en voorkom onnodige parkeerkosten." },
       { "icon": "🔗", "title": "Bluetooth", "text": "Koppel met je auto of een beacon." },
       { "icon": "⚡", "title": "Real-time waarschuwingen", "text": "Handel op het juiste moment." },
-      { "icon": "🔒", "title": "Privacy-first", "text": "Lokaal waar mogelijk, versleuteld waar nodig." },
+      { "icon": "🚗", "title": "Auto Locatie", "text": "Kijk op de kaart waar u het laatst bent uitgestapt en vind zo uw auto terug!" },
       { "icon": "✅", "title": "Eenvoudig", "text": "Activeer in enkele minuten." },
       { "icon": "🕘", "title": "Geschiedenis", "text": "Overzicht van sessies en waarschuwingen." }
     ]

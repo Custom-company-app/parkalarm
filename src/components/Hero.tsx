@@ -50,12 +50,20 @@ export default function Hero({ t }: { t: any }) {
               style={{ animationDelay: "240ms" }}
             >
               <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg" onClick={() => track("cta_click", { cta: "primary_hero" })}>
-                <Link href="#contact">{t?.hero?.cta?.primary || "Neem contact op"}</Link>
+                <Link href="/#contact">{t?.hero?.cta?.primary || "Neem contact op"}</Link>
               </Button>
 
               <Button asChild variant="outline" size="lg" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg" onClick={() => track("cta_click", { cta: "secondary_hero" })}>
                 <Link href="#how-it-works">{t?.hero?.cta?.secondary || "Hoe het werkt"}</Link>
               </Button>
+
+              <a
+                href="/#contact"
+                className="inline-flex items-center justify-center whitespace-nowrap font-medium bg-blue-50 text-blue-700 hover:bg-blue-100 h-11 rounded-md px-8 py-4 text-lg border border-blue-200"
+                onClick={() => track("cta_click", { cta: "beta_hero" })}
+              >
+                Probeer gratis in bèta
+              </a>
             </div>
 
             <div

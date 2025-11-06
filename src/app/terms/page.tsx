@@ -24,7 +24,7 @@ export default async function TermsPage() {
           <h2 className="text-2xl font-semibold mb-4">1. Algemene bepalingen</h2>
           <p className="mb-4">
             Deze algemene voorwaarden zijn van toepassing op het gebruik van de ParkAlarm-app en -diensten, 
-            aangeboden door Muza Holding B.V., gevestigd te Barendrecht op het adres Weerkant 27 Eerste verdieping, 
+            aangeboden door Fremen B.V., gevestigd te Barendrecht op het adres Weerkant 27 Eerste verdieping, 
             ingeschreven bij de Kamer van Koophandel onder nummer 24471820.
           </p>
           <p className="mb-4">
@@ -92,7 +92,7 @@ export default async function TermsPage() {
           <h2 className="text-2xl font-semibold mb-4">6. Intellectueel eigendom</h2>
           <p className="mb-4">
             Alle rechten op de ParkAlarm-app, inclusief maar niet beperkt tot software, ontwerp, teksten, 
-            logo's en andere materialen, behoren toe aan Muza Holding B.V. of onze licentiegevers. 
+            logo's en andere materialen, behoren toe aan Fremen B.V. of onze licentiegevers. 
             U krijgt een beperkte, niet-exclusieve licentie om de app te gebruiken conform deze voorwaarden.
           </p>
         </section>
@@ -153,7 +153,7 @@ export default async function TermsPage() {
             Voor vragen over deze voorwaarden of onze diensten kunt u contact met ons opnemen via de contactgegevens in onze app.
           </p>
           <div className="bg-slate-50 p-4 rounded-lg">
-            <p><strong>Muza Holding B.V.</strong></p>
+            <p><strong>Fremen B.V.</strong></p>
             <p>Weerkant 27 Eerste verdieping</p>
             <p>Barendrecht</p>
             <p>KvK-nummer: 24471820</p>

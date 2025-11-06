@@ -23,7 +23,7 @@ export default async function PrivacyPage() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">1. General Information</h2>
           <p className="mb-4">
-            ParkAlarm is a trade name of Muza Holding B.V., located in Barendrecht at Weerkant 27 First floor. 
+            ParkAlarm is a trade name of Fremen B.V., located in Barendrecht at Weerkant 27 First floor. 
             We are registered with the Chamber of Commerce under number 24471820.
           </p>
           <p className="mb-4">
@@ -120,7 +120,7 @@ export default async function PrivacyPage() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">11. Contact Details</h2>
           <div className="bg-slate-50 p-4 rounded-lg">
-            <p><strong>Muza Holding B.V.</strong></p>
+            <p><strong>Fremen B.V.</strong></p>
             <p>Weerkant 27 First floor</p>
             <p>Barendrecht</p>
             <p>Chamber of Commerce number: 24471820</p>

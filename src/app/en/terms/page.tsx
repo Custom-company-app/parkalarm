@@ -24,7 +24,7 @@ export default async function TermsPage() {
           <h2 className="text-2xl font-semibold mb-4">1. General Provisions</h2>
           <p className="mb-4">
             These terms of service apply to the use of the ParkAlarm app and services, 
-            offered by Muza Holding B.V., located in Barendrecht at Weerkant 27 First floor, 
+            offered by Fremen B.V., located in Barendrecht at Weerkant 27 First floor, 
             registered with the Chamber of Commerce under number 24471820.
           </p>
           <p className="mb-4">
@@ -92,7 +92,7 @@ export default async function TermsPage() {
           <h2 className="text-2xl font-semibold mb-4">6. Intellectual Property</h2>
           <p className="mb-4">
             All rights to the ParkAlarm app, including but not limited to software, design, texts, 
-            logos, and other materials, belong to Muza Holding B.V. or our licensors. 
+            logos, and other materials, belong to Fremen B.V. or our licensors. 
             You receive a limited, non-exclusive license to use the app in accordance with these terms.
           </p>
         </section>
@@ -153,7 +153,7 @@ export default async function TermsPage() {
             For questions about these terms or our services, you can contact us through the contact details in our app.
           </p>
           <div className="bg-slate-50 p-4 rounded-lg">
-            <p><strong>Muza Holding B.V.</strong></p>
+            <p><strong>Fremen B.V.</strong></p>
             <p>Weerkant 27 First floor</p>
             <p>Barendrecht</p>
             <p>Chamber of Commerce number: 24471820</p>

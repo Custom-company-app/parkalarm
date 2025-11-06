@@ -34,7 +34,7 @@ export default function HowItWorks({ t }: { t: any }) {
   }, [steps.length]);
 
   return (
-    <section id="how-it-works" className="py-20 bg-gray-50/50 overflow-hidden">
+    <section id="how-it-works" className="py-20 bg-gray-50/50 overflow-visible">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -45,13 +45,13 @@ export default function HowItWorks({ t }: { t: any }) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch py-4">
           {steps.map((step: Step, index: number) => (
             <div
               key={index}
               ref={(el) => { itemRefs.current[index] = el; }}
               data-delay={`${index * 120}ms`}
-              className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex flex-col items-center text-center opacity-0 will-change-transform"
+              className="bg-white rounded-2xl p-6 pb-8 shadow-lg border border-gray-100 flex flex-col items-center text-center opacity-0 will-change-transform h-full"
             >
               <div className="mb-6 w-20 h-20 mx-auto flex items-center justify-center bg-blue-50 rounded-2xl">
                 {index === 0 && (

@@ -30,22 +30,22 @@ export default function Header({ t }: Props) {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out overflow-hidden ${
       isScrolled 
         ? 'bg-white/90 backdrop-blur-lg shadow-sm' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-28">
+        <div className="flex items-center justify-between h-26">
           {/* Left side: Logo and Nav */}
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-12">
             <Link href="/" className="group">
               <Image 
                 src="/logo/logo.svg" 
                 alt="ParkAlarm Logo" 
-                width={80} 
-                height={80}
-                className="w-20 h-20 transition-transform duration-300 group-hover:scale-110"
+                width={112} 
+                height={112}
+                className="w-42 h-20 transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
@@ -70,7 +70,7 @@ export default function Header({ t }: Props) {
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg"
               onClick={() => track("cta_click", { cta: "header_contact" })}
             >
-              <a href="#contact">{t.header.contact}</a>
+              <a href="/#contact">{t.header.contact}</a>
             </Button>
           </div>
         </div>

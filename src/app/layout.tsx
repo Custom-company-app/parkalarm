@@ -17,13 +17,13 @@ const sora = Sora({
 });
 
 const siteName = "ParkAlarm";
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.parkalarm.example";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.parkalarm.nl";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: "ParkAlarm – Slim gewaarschuwd bij parkeren",
   description:
-    "ParkAlarm waarschuwt je precies wanneer het telt. Zet zones en activiteiten aan, koppel je auto/BT-device en ontvang slimme meldingen.",
+    "ParkAlarm waarschuwt je precies wanneer het telt. Activeer Alarm Vrije Zones en activiteiten, koppel je auto/BT-device en ontvang slimme meldingen.",
   icons: {
     icon: [
       { url: "/favicons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     siteName,
     title: "ParkAlarm – Slim gewaarschuwd bij parkeren",
     description:
-      "ParkAlarm waarschuwt je precies wanneer het telt. Zet zones en activiteiten aan, koppel je auto/BT-device en ontvang slimme meldingen.",
+      "ParkAlarm waarschuwt je precies wanneer het telt. Activeer Alarm Vrije Zones en activiteiten, koppel je auto/BT-device en ontvang slimme meldingen.",
     images: [
       {
-        url: "/og.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ParkAlarm – Slim gewaarschuwd bij parkeren",
+        alt: "ParkAlarm – voorkom onnodige parkeerkosten automatisch",
       },
     ],
   },
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ParkAlarm – Slim gewaarschuwd bij parkeren",
     description:
-      "ParkAlarm waarschuwt je precies wanneer het telt. Zet zones en activiteiten aan, koppel je auto/BT-device en ontvang slimme meldingen.",
-    images: ["/og.jpg"],
+      "ParkAlarm waarschuwt je precies wanneer het telt. Activeer Alarm Vrije Zones en activiteiten, koppel je auto/BT-device en ontvang slimme meldingen.",
+    images: ["/og-image.jpg"],
   },
   alternates: { canonical: "/", languages: { en: "/en" } },
   robots: { index: true, follow: true },

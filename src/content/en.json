@@ -17,8 +17,8 @@
   },
   "badge": "Free in beta",
   "hero": {
-    "headline": "No more parking stress.",
-    "sub": "ParkAlarm warns you exactly when it matters. Enable zones and activities, connect your car/BT device, and get smart alerts so you won't risk fines.",
+    "headline": "No unnecessary parking costs anymore.",
+    "sub": "ParkAlarm warns you exactly when it matters. Activate zones and activities, connect your car/BT device, and get smart alerts so you don't risk fines or overpay when parking fees keep running after you've left.",
     "badge": "🚗 Beta available",
     "cta": {
       "primary": "Contact us",
@@ -37,20 +37,20 @@
     "title": "How it works",
     "subtitle": "In 4 simple steps:",
     "steps": [
-      { "title": "Create zones", "text": "Set up geofences around parking areas or neighborhoods.", "image": "/steps/step1.svg", "alt": "Step 1 – set zones" },
+      { "title": "Alarm Free Zones", "text": "Define so-called Alarm Free Zones on the map where you don't want to receive alerts.", "image": "/steps/step1.svg", "alt": "Step 1 – set zones" },
       { "title": "Connect Bluetooth", "text": "Connect your car or a BT beacon for accuracy.", "image": "/steps/step2.svg", "alt": "Step 2 – connect Bluetooth" },
-      { "title": "Choose activities", "text": "Enable parking, charging, or work mode – you decide.", "image": "/steps/step3.svg", "alt": "Step 3 – choose activities" },
+      { "title": "Set Alarm Free Zones", "text": "Set the Alarm Free Zones where you don't want to receive alerts.", "image": "/steps/step3.svg", "alt": "Step 3 – choose activities" },
       { "title": "Get alerts", "text": "Real-time notifications when needed.", "image": "/steps/step4.svg", "alt": "Step 4 – receive alerts" }
     ]
   },
   "features": {
     "title": "Why ParkAlarm?",
-    "subtitle": "The smartest way to prevent parking troubles",
+    "subtitle": "The smartest way to prevent unnecessary parking costs",
     "items": [
-      { "icon": "🗺️", "title": "Zones", "text": "Geofences & activities tailored to you." },
+      { "icon": "🗺️", "title": "Alarm Free Zones", "text": "Set up Alarm Free Zones to avoid unnecessary parking costs." },
       { "icon": "🔗", "title": "Bluetooth", "text": "Pair with your car or a beacon." },
       { "icon": "⚡", "title": "Real-time alerts", "text": "Act at the right moment." },
-      { "icon": "🔒", "title": "Privacy-first", "text": "Local where possible, encrypted where needed." },
+      { "icon": "🚗", "title": "Car Location", "text": "Check the map to see where you last got out and easily find your car again!" },
       { "icon": "✅", "title": "Easy", "text": "Activate in minutes." },
       { "icon": "🕘", "title": "History", "text": "Overview of sessions and alerts." }
     ]
