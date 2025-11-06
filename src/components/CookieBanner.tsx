@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import * as content from "@/content";
 
 declare global {
   interface Window {
@@ -14,6 +16,9 @@ declare global {
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
+  const lang = pathname.startsWith("/en") ? "en" : "nl";
+  const t = content[lang].cookies;
 
   useEffect(() => {
     const consent = localStorage.getItem("pa_consent");
@@ -39,18 +44,17 @@ export default function CookieBanner() {
     <div className="fixed bottom-4 left-4 z-50 w-full max-w-md">
       <Card>
         <CardHeader>
-          <CardTitle>Cookie-instellingen</CardTitle>
+          <CardTitle>{t.title}</CardTitle>
           <CardDescription>
-            Wij gebruiken cookies voor analyse om de app te verbeteren.
-            Zie de <a href="/cookies" className="underline">cookieverklaring</a>.
+            {t.description}
           </CardDescription>
         </CardHeader>
         <CardFooter className="flex gap-3">
            <Button variant="outline" className="w-full" onClick={() => updateConsent(false)}>
-            Weigeren
+            {t.reject}
           </Button>
           <Button className="w-full" onClick={() => updateConsent(true)}>
-            Accepteren
+            {t.accept}
           </Button>
         </CardFooter>
       </Card>

@@ -126,5 +126,11 @@
   },
   "pricing": {
     "price": "0"
+  },
+  "cookies": {
+    "title": "Cookie-instellingen",
+    "description": "Wij gebruiken cookies voor analyse om de app te verbeteren. Zie de cookieverklaring.",
+    "reject": "Weigeren",
+    "accept": "Accepteren"
   }
 }

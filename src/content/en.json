@@ -126,5 +126,11 @@
   },
   "pricing": {
     "price": "0"
+  },
+  "cookies": {
+    "title": "Cookie settings",
+    "description": "We use cookies for analytics to improve the app. See our cookie statement.",
+    "reject": "Decline",
+    "accept": "Accept"
   }
 }
