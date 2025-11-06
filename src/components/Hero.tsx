@@ -62,7 +62,7 @@ export default function Hero({ t }: { t: any }) {
                 className="inline-flex items-center justify-center whitespace-nowrap font-medium bg-blue-50 text-blue-700 hover:bg-blue-100 h-11 rounded-md px-8 py-4 text-lg border border-blue-200"
                 onClick={() => track("cta_click", { cta: "beta_hero" })}
               >
-                Probeer gratis in bèta
+                {t?.hero?.cta?.beta || "Probeer gratis in bèta"}
               </a>
             </div>
 

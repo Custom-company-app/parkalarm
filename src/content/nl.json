@@ -22,7 +22,8 @@
     "badge": "🚗 Beta beschikbaar",
     "cta": {
       "primary": "Neem contact op",
-      "secondary": "Hoe het werkt"
+      "secondary": "Hoe het werkt",
+      "beta": "Probeer gratis in bèta"
     },
     "features": {
       "creditcard": "Geen creditcard vereist",

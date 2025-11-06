@@ -22,7 +22,8 @@
     "badge": "🚗 Beta available",
     "cta": {
       "primary": "Contact us",
-      "secondary": "How it works"
+      "secondary": "How it works",
+      "beta": "Try free in beta"
     },
     "features": {
       "creditcard": "No credit card required",
