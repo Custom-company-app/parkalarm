@@ -57,13 +57,16 @@ export default function Hero({ t }: { t: any }) {
                 <Link href="#how-it-works">{t?.hero?.cta?.secondary || "Hoe het werkt"}</Link>
               </Button>
 
-              <a
-                href="/#contact"
+              <Button
+                asChild
+                variant="ghost"
                 className="inline-flex items-center justify-center whitespace-nowrap font-medium bg-blue-50 text-blue-700 hover:bg-blue-100 h-11 rounded-md px-8 py-4 text-lg border border-blue-200"
                 onClick={() => track("cta_click", { cta: "beta_hero" })}
               >
-                {t?.hero?.cta?.beta || "Probeer gratis in bèta"}
-              </a>
+                <Link href="#faq">
+                  {t?.hero?.cta?.beta || "Probeer gratis"}
+                </Link>
+              </Button>
             </div>
 
             <div

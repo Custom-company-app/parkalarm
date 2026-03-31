@@ -15,15 +15,15 @@
     "press": "Pers",
     "english": "English"
   },
-  "badge": "Gratis in bèta",
+  "badge": "Gratis",
   "hero": {
     "headline": "Geen onnodige parkeerkosten meer.",
     "sub": "ParkAlarm waarschuwt je precies wanneer het telt. Activeer zones en activiteiten, verbind je auto/BT-apparaat en krijg slimme waarschuwingen zodat je geen risico op boetes loopt of teveel betaalt omdat de parkeerkosten na vertrek van de parkeerplaats blijven doorlopen.",
-    "badge": "🚗 Beta beschikbaar",
+    "badge": "🚗 Nu beschikbaar",
     "cta": {
       "primary": "Neem contact op",
       "secondary": "Hoe het werkt",
-      "beta": "Probeer gratis in bèta"
+      "beta": "Probeer gratis"
     },
     "features": {
       "creditcard": "Geen creditcard vereist",
@@ -75,9 +75,12 @@
   "faq": {
     "title": "Veelgestelde vragen",
     "items": [
+      { "q": "Is Parkalarm momenteel gratis?", "a": "Ja. De huidige versie van Parkalarm is onze eerste release en is volledig gratis te gebruiken. Alle functies zijn op dit moment zonder beperkingen beschikbaar." },
+      { "q": "Blijft dat in de toekomst zo?", "a": "Nee. In een volgende versie introduceren we een gratis abonnement met limieten op het aantal alarmen en alarmvrije zones. Voor gebruikers die onbeperkt gebruik willen maken van alle functionaliteiten, komt er ook een betaalde versie." },
+      { "q": "Wat is het voordeel van nu aanmelden?", "a": "Gebruikers die zich in deze fase aanmelden, profiteren later van een exclusieve lifetime korting op de betaalde versie van Parkalarm." },
       { "q": "Hoe werkt zonedetectie?", "a": "Met geofences en optionele Bluetooth herkent ParkAlarm wanneer je een zone binnenkomt of verlaat." },
       { "q": "Werkt het offline?", "a": "Basisdetectie draait lokaal; je hebt internet nodig voor updates en synchronisatie." },
-      { "q": "Wat kost het?", "a": "ParkAlarm is gratis tijdens de bèta. Prijzen worden aangekondigd bij de lancering." },
+      { "q": "Wat kost het?", "a": "ParkAlarm is op dit moment gratis. Prijzen worden aangekondigd bij de officiële lancering." },
       { "q": "Hoe zit het met privacy?", "a": "We verzamelen zo min mogelijk data en versleutelen waar nodig. Jij blijft in controle." },
       { "q": "Welke telefoons worden ondersteund?", "a": "iOS en Android met recente versies. Details volgen." },
       { "q": "Kan ik later uitschrijven?", "a": "Ja, elk bericht bevat een uitschrijflink." }
